@@ -25,3 +25,10 @@ cd WorldModels
 pip install -r requirements.txt
 
 python 01_generate_data.py car_racing --total_episodes 2000 --start_batch 0 --time_steps 300
+
+python 02_train_vae.py --start_batch 0 --max_batch 9 --new_model
+
+python 03_generate_rnn_data.py --start_batch 0 --max_batch 9
+
+python 04_train_rnn.py --start_batch 0 --max_batch 9 --new_model
+
