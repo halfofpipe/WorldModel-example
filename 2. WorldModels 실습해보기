@@ -1,2 +1,27 @@
 WorldModels 실습해보기
 
+예제 출처: https://medium.com/applied-data-science/how-to-build-your-own-world-model-using-python-and-keras-64fb388ba459
+
+(이론적인 내용은 제외하고 Gym에서 구현하는 것에 집중합니다)
+
+
+
+source ~/tensor/bin/activate
+
+export DISPLAY=:0
+
+git clone https://github.com/AppliedDataSciencePartners/WorldModels.git
+
+sudo apt-get install python-pip
+sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+mkvirtualenv --python=/usr/bin/python3 worldmodels
+
+sudo apt-get install cmake swig python3-dev zlib1g-dev python-opengl mpich xvfb xserver-xephyr vnc4server
+
+cd WorldModels
+pip install -r requirements.txt
+
+python 01_generate_data.py car_racing --total_episodes 2000 --start_batch 0 --time_steps 300
