@@ -1,3 +1,58 @@
-윈도우 10에서 Ubuntu 앱을 다운 받기를 추천한다.
+1.윈도우 10에서 Ubuntu 앱을 다운 받기를 추천한다.
 
-http://harryp.tistory.com/730 참조
+ http://harryp.tistory.com/730 참조
+
+2. Ubuntu 환경에서 Tensorflow 설치하기 (출처: http://kjcoder.tistory.com/480)
+
+ ㄱ.Ubuntu 앱에서 다음 명령어를 입력한다
+ 
+    sudo apt-get install python3-pip python3-dev python-virtualenv
+ 
+ ㄴ.에러가 발생할 경우에 다음 명령어를 입력한다
+ 
+    sudo apt-get update
+ 
+ ㄷ.가상 Tensorflow환경을 설치한다
+ 
+   virtualenv --system-site-packages -p python3 tensor (마지막의 tensor는 TargetDirectory로 바꾸어도 상관없음)
+  
+ ㄹ.Tensorflow 가상환경 진입하기
+ 
+   source ~/tensor/bin/activate를 명령어로 입력한다
+   
+  가상환경에 진입하게 되면 명령어 맨 앞에 (tensor)가 보일 것이다.
+  
+3. Ubuntu에 OpenAI Gym 설치하기 (출처: http://kjcoder.tistory.com/482)
+
+  ㄱ. Ubuntu 앱에서 다음 명령어를 입력하고 Tensorflow 가상환경에 진입한다 
+  
+   source ~/tensor/bin/activate
+   
+   ㄴ. 다음 명령어를 입력한다
+   
+   sudo apt-get install -y python3-numpy python3-dev cmake zlib1g-dev libjpeg-dev xvfb libav-tools xorg-dev python3-opengl libboost-all-dev libsdl2-dev swig
+   
+   파이썬에서 제공하는 딥러닝 툴이라고 한다. 설치해보자
+   
+   ㄷ. Gym 을 가져오기 위한 명령어
+   
+   git clone https://github.com/openai/gym.git
+   
+   ㄹ. Gym으로 이동한다.
+   
+   cd gym
+   
+   ㅁ. Gym 설치를 위한 명령어
+   
+   pip install -e '.[all]'
+  
+  
+ ~~ 모든 작업이 끝나면 윈도우10에서 Ubuntu 앱을 사용하여 OpenAI Gym을 사용가능하다
+ 
+ 주의할점: 윈도우에서 Gym을 사용할때는 실행화면을 나타내주는 Xming이라는 프로그램이 반드시 필요하다
+ 
+ https://sourceforge.net/projects/xming/ 
+ 
+ 이 주소에서 다운받아 설치한 후 실행시켜주자.
+
+
